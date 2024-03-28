@@ -10,6 +10,17 @@ resource "aws_instance" "example" {
 
     user_data_replace_on_change = true
 
+    resource "aws_security_group" "instance" {
+        name = "terraform-example-instance"
+
+        ingress{
+           from_port   = 8080
+           to_port     = 8080
+           protocol    = "tcp"
+           cidr_blocks = ["0.0.0.0/0"]
+        }
+    }
+
     tags = {
         Name = "terraform-example"
     }   
