@@ -29,3 +29,8 @@ resource "aws_security_group" "instance" {
         Name = "instance-security-group"
     }                                                                       
 }
+
+variable "server_port" {
+    description = "The port the server will use for HTTP requests"
+    type        = number  
+}
