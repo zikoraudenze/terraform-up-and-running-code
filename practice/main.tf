@@ -33,4 +33,5 @@ resource "aws_security_group" "instance" {
 variable "server_port" {
     description = "The port the server will use for HTTP requests"
     type        = number  
+    default     = 8080
 }
